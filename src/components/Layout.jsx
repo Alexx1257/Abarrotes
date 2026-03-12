@@ -40,7 +40,7 @@ const navItemActive   = 'bg-brand-500/10 text-brand-300 border-brand-500/20';
 const navItemInactive = 'text-ink-secondary hover:bg-surface-hover hover:text-ink-primary';
 
 export default function Layout({ children }) {
-  const { user, logout, isDueno }   = useAuth();
+  const { user, logout, isDueno, storeName } = useAuth();
   const { lowStockCount, isOnline, theme, toggleTheme } = useApp();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
@@ -74,7 +74,7 @@ export default function Layout({ children }) {
           </div>
           <div className="min-w-0">
             <p className="text-sm font-bold text-ink-primary truncate">AbarroteSaaS</p>
-            <p className="text-xxs text-ink-muted truncate">Tienda Principal</p>
+            <p className="text-xxs text-ink-muted truncate">{storeName || 'Tienda Principal'}</p>
           </div>
         </div>
 

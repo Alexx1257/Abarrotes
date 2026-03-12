@@ -21,9 +21,15 @@ export default function CreditPage() {
 
   async function fetchClients() {
     setLoading(true);
-    const { data } = await supabase.from('clients').select('*').order('name');
-    setClients(data || []);
-    setLoading(false);
+    try {
+      const { data, error } = await supabase.from('clients').select('*').order('name');
+      if (error) throw error;
+      setClients(data || []);
+    } catch (err) {
+      console.error('[CreditPage] Error al cargar clientes:', err);
+    } finally {
+      setLoading(false);
+    }
   }
 
   const handleCreateClient = async (e) => {

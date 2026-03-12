@@ -114,7 +114,7 @@ Los requisitos funcionales describen el comportamiento observable del sistema de
 | **RF-02.05** | El sistema debe validar la identidad del Encargado en cada sesión mediante token seguro gestionado por Supabase Auth. |
 | *⚠ Nota: Al eliminar la distinción Dueño/Empleado se simplifica la arquitectura de permisos. Si en el futuro el negocio crece y requiere roles diferenciados, se puede extender este módulo sin rediseñar el esquema base.* |  |
 
- 
+ Revisa la integracion de todo el proyecto que el modo oscuro/calro funcione correctamente en todo , asi como el Multi-Tenant  , para la conecion con @mcp:supabase-mcp-server: AbarroteSaas
 
 ## **RF-03 · Gestión de Tiendas (Multi-Tenant)**
 
